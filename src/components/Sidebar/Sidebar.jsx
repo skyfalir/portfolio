@@ -4,12 +4,12 @@ import { useSwipeable } from 'react-swipeable';
 import './sidebar.css';
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
   const [parallaxY, setParallaxY] = useState(0);
   const [{ y }, setY] = useSpring(() => ({ y: 0 }));
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 900);
     };
     window.addEventListener('resize', handleResize);
     handleResize();
