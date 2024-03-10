@@ -68,6 +68,18 @@ h1 span{
 .sidebar.mobile:not(.open) {
 	margin-top: -40px;
 }
+.sidebar.mobile:not(.open)::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  content: "\2193";
+  font-size: 2.1rem;
+  font-weight: 900;
+  background: black;
+  color: white;
+  text-align: center;
+}
 .sidebar.mobile:not(.open) .sidebar-content {
 	display: none;
 }

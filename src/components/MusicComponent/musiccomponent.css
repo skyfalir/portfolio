@@ -13,6 +13,11 @@
 	padding: 10px 50px;
 }
 
+.music-header h2{
+	background: black;
+	color: white;
+}
+
 .artist-paragraph {
 	max-width: 700px;
 	margin: auto;
