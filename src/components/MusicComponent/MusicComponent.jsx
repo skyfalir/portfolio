@@ -15,9 +15,9 @@ const MusicComponent = () => {
       <SoundCloudPlayer />
       <div className="music-social-icons">
         {}
-        <a href="https://twitter.com/your_twitter" target="_blank" rel="noopener noreferrer"><FaBandcamp /></a>
-        <a href="https://facebook.com/your_facebook" target="_blank" rel="noopener noreferrer"><FaMixcloud /></a>
-        <a href="https://soundcloud.com/your_soundcloud" target="_blank" rel="noopener noreferrer"><FaSoundcloud /></a>
+        <a href="https://skyflairofficial.bandcamp.com/" target="_blank" rel="noopener noreferrer"><FaBandcamp /></a>
+        <a href="https://www.mixcloud.com/SkyFlair/" target="_blank" rel="noopener noreferrer"><FaMixcloud /></a>
+        <a href="https://soundcloud.com/skyflairofficial" target="_blank" rel="noopener noreferrer"><FaSoundcloud /></a>
       </div>
       <div className="pattern"></div>
     </div>
