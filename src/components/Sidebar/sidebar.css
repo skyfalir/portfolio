@@ -33,7 +33,7 @@ h1 span{
   writing-mode: vertical-lr;
 }
 
-h1,
+.sidebar h1,
 .social-icons {
 	background: black;
 	color: white;

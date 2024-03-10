@@ -8,14 +8,16 @@
 
 }
 .soundcloud-player iframe{
-    width: 600px;
+    min-width: 600px;
     height: 100%;
     border: 1px solid black;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .soundcloud-player{
         flex-direction: column;
     }
-    
+    .soundcloud-player iframe{
+        min-width: 100vw;
+    }
 }
