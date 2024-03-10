@@ -1,0 +1,131 @@
+.dev-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+.about-dev,
+.dev-cards-container,
+.dev-content h3{
+  max-width: 95vw;
+  padding: 20px 50px;
+}
+.dev-content h3{
+  margin-right: auto
+}
+.tools{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tools p{
+  font-family: 'Courier New', Courier, monospace;
+  color: #888;
+  font-weight: 800;
+}
+.about-dev p{
+  max-width: 700px;
+}
+.about-dev{
+  margin-right: auto;
+  margin-left: 0px;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(to right, rgb(255, 255, 255),rgb(0, 0, 0)) 1;
+}
+.dev-cards-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.dev-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 90vw;
+  max-width: 900px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #fff;
+  overflow: hidden;
+  filter: grayscale(0.8);
+  transition: filter 0.3s ease-in-out;
+}
+.dev-card:hover {
+  filter: grayscale(0);
+}
+.dev-card-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  justify-content: space-around;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.755) , #000000cd);
+  backdrop-filter: blur(5px);
+}
+.dev-card-info p{
+  padding-right: 50px;
+}
+
+.dev-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dev-buttons::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: white;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  z-index: 0;
+  transition: 0.3s;
+}
+.dev-card:hover .dev-buttons::before {
+  opacity: 0.5;
+  backdrop-filter: blur(10px);
+}
+
+.dev-buttons a {
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+  color: white;
+  background: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border: 1px solid #fff;
+}
+.dev-buttons a:hover{
+  cursor: pointer;
+  color: black;
+  background: #ffffff;
+  border-color: #eaeaea;
+  
+}
+.dev-buttons a:active{
+  color: red;
+  background-color: #222;
+}
+
+@media (max-width: 1200px) {
+  .dev-cards-container {
+    flex-direction: column;
+  }
+  .dev-card-info{
+    padding-inline: 15px;
+  }
+}

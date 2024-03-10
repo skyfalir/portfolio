@@ -1,0 +1,21 @@
+.soundcloud-player{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 600px;
+    margin: 10px auto;
+    max-width: 1200px;
+
+}
+.soundcloud-player iframe{
+    width: 600px;
+    height: 100%;
+    border: 1px solid black;
+}
+
+@media screen and (max-width: 1000px) {
+    .soundcloud-player{
+        flex-direction: column;
+    }
+    
+}

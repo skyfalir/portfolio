@@ -1,0 +1,164 @@
+body,html{
+	padding: 0;
+	margin: 0;
+}
+*{
+	font-family: 'Montserrat';
+}
+.split-screen {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	position: relative;
+}
+.left-side {
+	border-bottom: 1px solid transparent; 
+	border-image: linear-gradient(to right, rgb(0, 0, 0), rgb(255, 255, 255)) 1;
+}
+
+.left-side:not(.full-screen),
+.right-side:not(.full-screen) {
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+}
+
+.left-side:hover,
+.right-side:hover {
+	background: #ca1d1d;
+}
+.left-side,
+.right-side {
+	flex: 1;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+.left-side:hover .overlay,
+.right-side:hover .overlay {
+	color: #000000;
+	border-radius: 5px;
+}
+.overlay {
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 5px;
+	text-align: center;
+	z-index: 5;
+	transition: all 0.5s ease;
+	opacity: 1;
+	visibility: visible;
+}
+.overlay-text{
+	margin-inline: 50px;
+}
+.overlay-icons{
+	font-size: 100px;
+}
+
+.overlay.hidden {
+	visibility: hidden;
+	opacity: 0;
+}
+.dev-selected,
+.music-selected {
+	overflow-y: auto;
+	height: 100vh;
+}
+.dev-selected {
+	background-color: black;
+	color: white;
+}
+
+.music-selected {
+	background-color: white;
+	color: black;
+}
+
+.full-screen {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 15;
+	transition: all 0.5s;
+}
+.dev-content {
+	opacity: 0;
+	visibility: hidden;
+	transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+
+.visible {
+	opacity: 1;
+	visibility: visible;
+	transition-delay: 0s;
+}
+
+.close-button {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 20;
+	cursor: pointer;
+	font-size: 30px;
+	color: red;
+}
+
+.mail-button{
+	border: 1px solid #fff;
+	background: #fff;
+	padding: 10px 20px;
+	margin-bottom: 10px;
+  }
+  .mail-button:hover{
+	background: #222;
+	color: white;
+  }
+  .pattern{
+	background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='30' patternTransform='scale(2) rotate(145)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 0%, 1)'/><path d='M0 10h20z'   stroke-width='17' stroke='hsla(0, 0%, 100%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+	background-size: auto 150%;
+	width: 100%;
+	height: 30px;
+  }
+
+@media screen and (max-width: 900px) {
+	.overlay{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 80%;
+	}
+	
+}
+
+
+@keyframes glitch {
+	0%, 10%, 90%, 100% {
+	  clip-path: inset(0 0 0 0);
+	  transform: translate(0);
+	}
+	13%, 15%, 17%, 19%, 21%, 23% {
+	  clip-path: inset(10% 0 10% 0);
+	  transform: translate(-5px, 0);
+	}
+	25%, 27%, 29% {
+	  clip-path: inset(20% 0 5% 0);
+	  transform: translate(5px, 0);
+	}
+	31%, 33%, 35%, 37% {
+	  clip-path: inset(0 5% 30% 0);
+	  transform: translate(0, -5px);
+	}
+	39%, 41%, 43%, 45% {
+	  clip-path: inset(33% 0 0 5%);
+	  transform: translate(5px, 5px);
+	}
+  }
