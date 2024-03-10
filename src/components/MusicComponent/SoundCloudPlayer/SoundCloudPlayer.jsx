@@ -1,4 +1,4 @@
-// SoundCloudPlayer.js
+
 import React from 'react';
 import './soundcloudplayer.css';
 
@@ -23,4 +23,3 @@ const SoundCloudPlayer = () => {
 };
 
 export default SoundCloudPlayer;
-

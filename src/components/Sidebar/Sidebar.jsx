@@ -7,7 +7,6 @@ function Sidebar() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [parallaxY, setParallaxY] = useState(0);
   const [{ y }, setY] = useSpring(() => ({ y: 0 }));
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -16,7 +15,6 @@ function Sidebar() {
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   useEffect(() => {
     if (!isMobile) {
       const handleMouseMove = (event) => {
@@ -28,27 +26,23 @@ function Sidebar() {
       return () => window.removeEventListener('mousemove', handleMouseMove);
     }
   }, [isMobile]);
-
   const handlers = useSwipeable({
     onSwipedDown: () => isMobile && setIsOpen(true),
     onSwipedUp: () => isMobile && setIsOpen(false),
     onSwiping: (eventData) => {
-      if (isMobile && !isOpen) {
-        // Allow dragging up to a certain percentage of the sidebar height
-        const dragLimit = 50; // 50px drag limit
+      if (isMobile) {
+        const dragLimit = 50;
         const dragProgress = Math.min(eventData.deltaY, dragLimit);
         setY({ y: dragProgress });
       }
     },
     onSwiped: () => {
       if (isMobile) {
-        // Close or reset sidebar position after swipe
         setY({ y: 0 });
       }
     },
-    trackMouse: false, // For testing on desktop, change to false for production
+    trackMouse: false,
   });
-
   return (
     <animated.div
       {...handlers}
